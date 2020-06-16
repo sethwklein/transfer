@@ -8,6 +8,6 @@ Snippet Transfer Tools
 
 Git Bash on Windows doesn't have `make`.
 
-### Subcommands
+### Helpers
 
-* [`cb`](README_CB.md)
+* [`cb`](README_CB.md), for transferring to and from the clipboard

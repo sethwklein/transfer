@@ -20,11 +20,11 @@ case $# in
                 exit 1
             ;;
         esac
-        cb | ssh ubuntu@aws.skn.io 'cat > fifo'
+        ssh ubuntu@aws.skn.io 'cat > fifo'
     ;;
     0)
         # receive
-        ssh ubuntu@aws.skn.io 'cat < fifo' | cb -
+        ssh ubuntu@aws.skn.io 'cat < fifo'
     ;;
     *)
         usage
