@@ -29,6 +29,10 @@ I think out is more common?
 The concept is that if you give it a file, it takes input from that,
 otherwise it provides output.
 
+### Cross Platform Compatibility
+
+Newline handling on Windows can result in a few extra.
+
 ### Future Changes
 
 * Support for files, not just `stdin` (`-`)
