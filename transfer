@@ -1,0 +1,33 @@
+#!/bin/bash
+
+self=$(basename $0)
+
+usage() {
+    echo "$self usage:" 1>&2
+    echo "$self > file" 1>&2
+    echo "$self - < file" 1>&2
+}
+
+case $# in
+    1)
+        # send
+        case $1 in
+            -)
+                # below
+            ;;
+            *)
+                usage
+                exit 1
+            ;;
+        esac
+        cb | ssh ubuntu@aws.skn.io 'cat > fifo'
+    ;;
+    0)
+        # receive
+        ssh ubuntu@aws.skn.io 'cat < fifo' | cb -
+    ;;
+    *)
+        usage
+        exit 1
+    ;;
+esac

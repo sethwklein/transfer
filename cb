@@ -1,0 +1,50 @@
+#!/bin/bash
+
+self=$(basename $0)
+
+# operating system
+get=
+set=
+case $(uname) in
+    Darwin)
+        get=pbpaste
+        set=pbcopy
+    ;;
+    MINGW*)
+        get=powershell -command Get-Clipboard
+        set=clip
+    ;;
+    *)
+        echo "$self: unsupported operating system or change in supported operating system" 1>&2
+        exit 1
+    ;;
+esac
+
+usage() {
+    echo "$self usage:" 1>&2
+    echo "$self > file" 1>&2
+    echo "$self - < file" 1>&2
+}
+
+# operation
+case $# in
+    1)
+        case $1 in
+            -)
+                # below
+            ;;
+            *)
+                usage
+                exit 1
+            ;;
+        esac
+        exec $set
+    ;;
+    0)
+        exec $get
+    ;;
+    *)
+        usage
+        exit 1
+    ;;
+esac
