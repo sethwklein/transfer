@@ -21,17 +21,13 @@ open.
 
 Different names? `bc` is taken.
 
-I think out is more common?
+I think out is more common? (Probably not?)
 
 * `cb | foo` is out and default
 * `foo | cb -` is input mode
 
 The concept is that if you give it a file, it takes input from that,
 otherwise it provides output.
-
-### Cross Platform Compatibility
-
-Newline handling on Windows can result in a few extra.
 
 ### Future Changes
 
