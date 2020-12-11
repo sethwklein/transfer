@@ -4,4 +4,4 @@ set -ev
 
 install -d ~/bin
 install cb ~/bin
-install transfer ~/bin
+install tx ~/bin
